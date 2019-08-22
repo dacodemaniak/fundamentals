@@ -20,16 +20,21 @@ public class Hello {
         // Build one user... Bond, James Bond...
         User bond = new User();
         // Define name and firstname, then gender
-        bond.setName("bond");
-        bond.setFirstName("James");
+        bond
+            .name("bond")
+            .firstName("James");
         
         // Define another user
         User mond = new User();
-        mond.setName("Monde");
-        mond.setFirstName("Ray");
-        mond.isMale(false);
+        mond
+            .name("Monde")
+            .firstName("Ray")
+            .isMale(false);
         
         System.out.println(bond.sayHello());
         System.out.println(mond.sayHello());
+        
+        // Afficher le nom de Raymonde
+        System.out.println(mond.getString("Name"));
     }
 }

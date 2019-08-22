@@ -25,13 +25,7 @@ public class User {
      */
     private boolean isMale = true;
     
-    /**
-     * Store uppercase name param into name attribute
-     * @param name Name to convert into uppercase string
-     */
-    public void setName(String name) {
-        this.name = name.toUpperCase();
-    }
+
     
     /**
      * Store firstName of this User
@@ -41,14 +35,63 @@ public class User {
         this.firstName = firstName;
     }
     
+
+
+    
+    /**
+     * Returns name of this User
+     * @return 
+     */
+    public String getName() {
+        return this.name;
+    }
+    
+    public String getFirstName() {
+        return this.firstName;
+    }
+    
+    public boolean getIsMale() {
+        return this.isMale;
+    }
+ 
+     /**
+     * Store uppercase name param into name attribute
+     * @param name Name to convert into uppercase string
+     */
+    public void setName(String name) {
+        this.name = name.toUpperCase();
+    }
+    
+    public User name(String name) {
+        this.name = name.toUpperCase();
+        return this;
+    }
+    
+    public String name() {
+        return this.name;
+    }
+    
+    public User firstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+    
+    public String firstName() {
+        return this.firstName;
+    }
+    
     /**
      * Store the gender of this User
      * @param isMale 
-     */
-    public void isMale(boolean isMale) {
+    */    
+    public User isMale(boolean isMale) {
         this.isMale = isMale;
+        return this;
     }
     
+    public boolean isMale() {
+        return this.isMale;
+    }
     /**
      * Retourne une chaîne avec le nom, le prénom et le sexe du User
      * @return String
