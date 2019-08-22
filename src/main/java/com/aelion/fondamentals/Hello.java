@@ -5,6 +5,7 @@
  */
 package com.aelion.fondamentals;
 
+import com.aelion.fondamentals.users.Attorney;
 import com.aelion.fondamentals.users.User;
 
 /**
@@ -35,6 +36,13 @@ public class Hello {
         System.out.println(mond.sayHello());
         
         // Afficher le nom de Raymonde
-        System.out.println(mond.getString("Name"));
+        System.out.println(mond.name());
+        
+        // Instancier un Attorney
+        Attorney thibault = new Attorney();
+        thibault
+            .name("Trucmuche")
+            .firstName("Thibault");
+        System.out.println(thibault.sayHello());
     }
 }
