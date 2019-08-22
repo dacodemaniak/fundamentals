@@ -12,6 +12,6 @@ package com.aelion.fondamentals.users;
 public class Attorney extends User {
     @Override
     public String sayHello() {
-        return "Hello Maître " + this.name();
+        return "Hello Maître " + this.name;
     }
 }

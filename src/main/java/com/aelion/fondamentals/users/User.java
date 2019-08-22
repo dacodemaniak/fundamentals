@@ -13,17 +13,17 @@ public class User {
     /**
      * Nom de l'utilisateur
      */
-    private String name;
+    protected String name;
     
     /**
      * Prénom de l'utilisateur
      */
-    private String firstName;
+    protected String firstName;
     
     /**
      * Détermine le sexe de l'utilisateur, default true
      */
-    private boolean isMale = true;
+    protected boolean isMale = true;
     
 
     
