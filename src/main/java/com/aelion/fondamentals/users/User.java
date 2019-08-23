@@ -9,7 +9,7 @@ package com.aelion.fondamentals.users;
  *
  * @author root
  */
-public class User {
+public abstract class User {
     /**
      * Nom de l'utilisateur
      */
@@ -25,7 +25,32 @@ public class User {
      */
     protected boolean isMale = true;
     
-
+    /**
+     * Constructeur standard
+     */
+    protected User() {}
+    
+    /**
+     * Constructeur avec nom et prénom
+     * @param name
+     * @param firstName 
+     */
+    protected User(String name, String firstName) {
+        this.name = name.toUpperCase();
+        this.firstName = firstName;
+    }
+    
+    /**
+     * Constructeur avec nom, prénom et genre
+     * @param name
+     * @param firstName
+     * @param isMale 
+     */
+    protected User(String name, String firstName, boolean isMale) {
+        this.name = name.toUpperCase();
+        this.firstName = firstName;
+        this.isMale = isMale;
+    }
     
     /**
      * Store firstName of this User
@@ -96,17 +121,5 @@ public class User {
      * Retourne une chaîne avec le nom, le prénom et le sexe du User
      * @return String
      */
-    public String sayHello() {
-        String message = "Hello ";
-        
-        if (this.isMale) {
-            message = message + " Mister ";
-        } else {
-            message = message + " Miss ";
-        }
-        
-        message = message + this.firstName + " " + this.name;
-        
-        return message;
-    }
+    public abstract String sayHello();
 }

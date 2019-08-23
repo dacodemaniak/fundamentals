@@ -6,6 +6,7 @@
 package com.aelion.fondamentals;
 
 import com.aelion.fondamentals.users.Attorney;
+import com.aelion.fondamentals.users.Doctor;
 import com.aelion.fondamentals.users.User;
 
 /**
@@ -19,18 +20,24 @@ public class Hello {
      */
     public static void main(String args[]) {
         // Build one user... Bond, James Bond...
-        User bond = new User();
+        User bond = new Attorney();
         // Define name and firstname, then gender
         bond
             .name("bond")
             .firstName("James");
         
         // Define another user
-        User mond = new User();
+        User mond = new Doctor();
         mond
             .name("Monde")
             .firstName("Ray")
             .isMale(false);
+        
+        User gentleman = new Doctor("Lupin", "Arsène");
+        System.out.println("En fait, c'est Casper : " + gentleman.sayHello());
+        
+        User midget = new Attorney("Matthie", "Mimi", false);
+        System.out.println(midget.sayHello());
         
         System.out.println(bond.sayHello());
         System.out.println(mond.sayHello());

@@ -10,6 +10,19 @@ package com.aelion.fondamentals.users;
  * @author root
  */
 public class Doctor extends User {
+    
+    public Doctor() {
+        super();
+    }
+    
+    public Doctor(String name, String firstName) {
+        super(name, firstName);
+    }
+    
+    public Doctor(String name, String firstName, boolean isMale) {
+        super(name, firstName, isMale);
+    }
+    
     @Override
     public String sayHello() {
         return "Hello Doctor " + this.name;
