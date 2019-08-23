@@ -24,7 +24,7 @@ public class Doctor extends User {
     }
     
     @Override
-    public String sayHello() {
-        return "Hello Doctor " + this.name;
+    public void sayHello() {
+        this.strategy.sayHello("Bonjour Docteur " + this.name + " " + this.firstName);
     }
 }

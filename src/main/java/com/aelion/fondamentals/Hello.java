@@ -5,6 +5,7 @@
  */
 package com.aelion.fondamentals;
 
+import com.aelion.fondamentals.share.strategies.SendToDialog;
 import com.aelion.fondamentals.users.Attorney;
 import com.aelion.fondamentals.users.Doctor;
 import com.aelion.fondamentals.users.User;
@@ -21,10 +22,12 @@ public class Hello {
     public static void main(String args[]) {
         // Build one user... Bond, James Bond...
         User bond = new Attorney();
+        bond.setStrategy(new SendToDialog());
         // Define name and firstname, then gender
         bond
             .name("bond")
             .firstName("James");
+        bond.sayHello();
         
         // Define another user
         User mond = new Doctor();
@@ -32,24 +35,22 @@ public class Hello {
             .name("Monde")
             .firstName("Ray")
             .isMale(false);
+        mond.sayHello();  // Dans la console
         
         User gentleman = new Doctor("Lupin", "Arsène");
-        System.out.println("En fait, c'est Casper : " + gentleman.sayHello());
+        gentleman.setStrategy(new SendToDialog());
+        gentleman.sayHello();
+        
         
         User midget = new Attorney("Matthie", "Mimi", false);
-        System.out.println(midget.sayHello());
-        
-        System.out.println(bond.sayHello());
-        System.out.println(mond.sayHello());
-        
-        // Afficher le nom de Raymonde
-        System.out.println(mond.name());
+        midget.sayHello();
         
         // Instancier un Attorney
         Attorney thibault = new Attorney();
         thibault
             .name("Trucmuche")
             .firstName("Thibault");
-        System.out.println(thibault.sayHello());
+        thibault.setStrategy(new SendToDialog());
+        thibault.sayHello();
     }
 }

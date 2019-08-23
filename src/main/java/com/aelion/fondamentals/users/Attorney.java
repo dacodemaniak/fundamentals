@@ -21,7 +21,7 @@ public class Attorney extends User {
     }
     
     @Override
-    public String sayHello() {
-        return "Hello Maître " + this.name;
+    public void sayHello() {
+        this.strategy.sayHello("Hello Maître " + this.name);
     }
 }

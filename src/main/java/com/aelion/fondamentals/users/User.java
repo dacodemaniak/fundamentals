@@ -5,6 +5,9 @@
  */
 package com.aelion.fondamentals.users;
 
+import com.aelion.fondamentals.share.interfaces.Helloable;
+import com.aelion.fondamentals.share.strategies.SendToConsole;
+
 /**
  *
  * @author root
@@ -24,6 +27,8 @@ public abstract class User {
      * Détermine le sexe de l'utilisateur, default true
      */
     protected boolean isMale = true;
+    
+    protected Helloable strategy = new SendToConsole();
     
     /**
      * Constructeur standard
@@ -52,9 +57,13 @@ public abstract class User {
         this.isMale = isMale;
     }
     
-    /**
+    public void setStrategy(Helloable strategy) {
+        this.strategy = strategy;
+    }
+    
+    /**name
      * Store firstName of this User
-     * @param firstName 
+     * @param firstName name
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -63,7 +72,7 @@ public abstract class User {
 
 
     
-    /**
+    /**name
      * Returns name of this User
      * @return 
      */
@@ -121,5 +130,5 @@ public abstract class User {
      * Retourne une chaîne avec le nom, le prénom et le sexe du User
      * @return String
      */
-    public abstract String sayHello();
+    public abstract void sayHello();
 }
